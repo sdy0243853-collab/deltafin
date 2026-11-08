@@ -5,7 +5,7 @@ export K3_EXPERT_DIR_B="${K3_EXPERT_DIR_B:-/Volumes/Green/k3-experts-full}"   # 
 export K3_EXPERT_DIR_C="${K3_EXPERT_DIR_C:-/Volumes/Yellow/serve3-green}"     # replica band on the slowest enclosure (26,684 files; placement/manifest-yellow.txt.gz)
 export K3_EXPERT_HOT_DIR="${K3_EXPERT_HOT_DIR:-/Volumes/White/k3-experts-b}"  # hot replica (50,265 files; placement/manifest-white.txt.gz); primary = internal SSD with the most-used experts copied in (placement/manifest-internal.txt.gz)
 export K3_EXPERT_PREFETCH_GENERATIONS=4   # layers of prefetch lookahead; the engine default is 2 — the measured configuration ran with 4 (the measurement harness), so the package must set it (omission found 2026-09-08 by diffing every K3_ export against the harness)
-# expert reads
+# expert reads 
 export K3_EXPERT_READ_THREADS=64 K3_EXPERT_PREFETCH_THREADS=8   # PROMOTED 2026-09-06: 12 → 8 prefetch threads = +2.0% at 200 tok (1.1260 vs 1.1044, uncovered wait 70.9 → 58.6 s), +2.2% at 60; the five-knob stack was +1.9% and this knob carries it
 export K3_SPLIT_READ=2 K3_TIER_BALANCE=1
 export K3_SPLIT_ETA=1 K3_SPLIT_ETA_GBPS=7.1,5.5,6.5,13.5   # in-flight router for chunked reads (rates: hot, dir_c, dir_b, primary GB/s)

@@ -1,4 +1,4 @@
-name: Native source policy
+  name: Native source policy
 
 on:
   push:
